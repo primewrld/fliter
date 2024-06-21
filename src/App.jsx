@@ -4,14 +4,15 @@ import mainFilter from './hooks/myfilter';
 const App = () => {
     const arrData = [
         "Jombo Ebube", "Favour Amano", "Kingsley Onyecheta", "Mobi Ogbodo",
-        "Diogo Njeze", "tochkwu Ugochukwu", "Paschaline Duhu", "Ifeanyi Edeh",
+        "Diogo Njeze", "Tochkwu Ugochukwu", "Paschaline Duhu", "Ifeanyi Edeh",
         "Udeani Collins", "Chibuzo Ngwu", "Amarachi Duru", "senior Kc", "Deborah Aneke",
     ];
     const filterWords = ["Favour Amano", "Paschaline Duhu", "Diogo Njeze", "Amarachi Duru", "Deborah Aneke"];
-
+    const filterMale = ["Jombo Ebube", "Kingsley Onyecheta", "Mobi Ogbodo", "Tochkwu Ugochukwu", "Ifeanyi Edeh"];
+    
     const [isFiltered, setIsFiltered] = useState(false);
     const [isLoading, setIsLoading] = useState(false); 
-    const { filteredData: data, loading } = mainFilter(arrData, isFiltered? filterWords : [], isLoading);
+    const { filteredData: data, loading } = mainFilter(arrData, isFiltered? filterWords : [], isLoading, isFiltered? filterMale : [], isLoading);
 
     const handleFilter = () => {
         setIsLoading(true); 
@@ -32,8 +33,9 @@ const App = () => {
     return (
         <div>
             <h2>Filter My Female Friends Below.</h2>
-            <button onClick={handleFilter} disabled={isLoading}>Filter States</button>
+            <button onClick={handleFilter} disabled={isLoading}>Filter female</button>
             <button onClick={handleReset} disabled={isLoading}>Refresh Page</button>
+            <button onClick={handleFilter} disabled={isLoading}>Filter male</button>
             {!loading &&!isLoading? (
                 <>
                     <ul>
