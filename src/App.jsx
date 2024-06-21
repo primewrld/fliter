@@ -3,12 +3,11 @@ import mainFilter from './hooks/myfilter';
 
 const App = () => {
     const arrData = [
-        "Enugu State", "Adamawa State", "Kano State", "Imo State",
-        "Ebonyi State", "Abia State", "Rivers State", "Anambra State",
-        "Platue State", "Lagos State", "Ogun State", "Delta State", "Edo State",
-        "Jigawa State", "Taraba State", "Ondo State", "Kastina State", "Sokoto State",
+        "Jombo Ebube", "Favour Amano", "Kingsley Onyecheta", "Mobi Ogbodo",
+        "Diogo Njeze", "tochkwu Ugochukwu", "Paschaline Duhu", "Ifeanyi Edeh",
+        "Udeani Collins", "Chibuzo Ngwu", "Amarachi Duru", "senior Kc", "Deborah Aneke",
     ];
-    const filterWords = ["Anambra State", "Abia State", "Ebonyi State", "Enugu State", "Imo State"];
+    const filterWords = ["Favour Amano", "Paschaline Duhu", "Diogo Njeze", "Amarachi Duru", "Deborah Aneke"];
 
     const [isFiltered, setIsFiltered] = useState(false);
     const [isLoading, setIsLoading] = useState(false); 
@@ -32,7 +31,7 @@ const App = () => {
 
     return (
         <div>
-            <h2>Filter Out SouthEast States From The List Of States Below.</h2>
+            <h2>Filter My Female Friends Below.</h2>
             <button onClick={handleFilter} disabled={isLoading}>Filter States</button>
             <button onClick={handleReset} disabled={isLoading}>Refresh Page</button>
             {!loading &&!isLoading? (
