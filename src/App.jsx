@@ -35,7 +35,7 @@ const App = () => {
             <h2>Filter My Female Friends Below.</h2>
             <button onClick={handleFilter} disabled={isLoading}>Filter female</button>
             <button onClick={handleReset} disabled={isLoading}>Refresh Page</button>
-            <button onClick={handleFilter} disabled={isLoading}>Filter male</button>
+            
             {!loading &&!isLoading? (
                 <>
                     <ul>
